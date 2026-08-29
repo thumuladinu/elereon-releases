@@ -14,6 +14,7 @@ import {
     UserAddOutlined
 } from "@ant-design/icons";
 import Cookies from "js-cookie";
+import { safeNavigate } from "../../utils/navigation";
 
 function Sidenav({ color }) {
   const { pathname } = useLocation();
@@ -136,10 +137,6 @@ function Sidenav({ color }) {
         const { USER_ID, NAME, ROLE } = rememberedUser;
         ROLE1 = ROLE;
         ////console.log(`User ID: ${USER_ID}, Name: ${NAME}`);
-    }
-    else{
-        Cookies.remove('rememberedUser');
-        window.location.href = '/';
     }
 
   return (

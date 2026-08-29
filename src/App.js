@@ -22,6 +22,7 @@ import Jobs from './pages/PM/Jobs';
 import SupervisorDashboard from './pages/PM/SupervisorDashboard';
 
 import PwaInstallPrompt from "./components/pwa/PwaInstallPrompt";
+import { safeNavigate } from "./utils/navigation";
 
 function App() {
   const [lastActivity, setLastActivity] = useState(Date.now());
@@ -65,8 +66,8 @@ function App() {
   // }, [lastActivity]);
 
   useEffect(() => {
-    if (is_cookie_set && window.location.pathname === '/') {
-      window.location.href = "/items"; // Redirect to '/items' if a valid cookie exists
+    if (is_cookie_set && (window.location.pathname === '/' || window.location.hash === '' || window.location.hash === '#/')) {
+      safeNavigate("/items"); // Redirect to '/items' if a valid cookie exists
     }
   }, [is_cookie_set]);
 

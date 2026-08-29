@@ -13,6 +13,8 @@ import { NavLink, useHistory } from "react-router-dom";
 import { HomeOutlined } from "@ant-design/icons"; // Import Home icon
 import Cookies from "js-cookie";
 
+import { safeNavigate } from "../../utils/navigation";
+
 function Header({ name, subName, onPress }) {
   const history = useHistory();
   const isMobile = useMediaQuery("(max-width: 768px)"); // Detects mobile screens
@@ -25,16 +27,19 @@ function Header({ name, subName, onPress }) {
     rememberedUser = JSON.parse(rememberedUser);
     NAME1 = rememberedUser.NAME;
     PHOTO1 = rememberedUser.PHOTO;
-  } else {
-    Cookies.remove("rememberedUser");
-    window.location.href = "/";
   }
 
-  useEffect(() => { window.scrollTo(0, 0); });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (!rememberedUser && window.location.pathname !== '/' && window.location.hash !== '#/') {
+      Cookies.remove("rememberedUser");
+      safeNavigate("/");
+    }
+  }, [rememberedUser]);
 
   const handleLogout = () => {
     Cookies.remove("rememberedUser");
-    window.location.href = "/";
+    safeNavigate("/");
   };
 
   const signInMenu = (

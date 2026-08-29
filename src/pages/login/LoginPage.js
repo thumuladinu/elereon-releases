@@ -10,6 +10,8 @@ import logo from "../../assets/images/logo.png";
 
 
 
+import { safeNavigate } from '../../utils/navigation';
+
 const Login = () => {
     const [loading, setLoading] = useState(false);
     const history = useHistory(); // Change to useHistory
@@ -30,9 +32,7 @@ const Login = () => {
                     Cookies.set('rememberedUser', JSON.stringify({ USER_ID, NAME, EMAIL, ROLE, PHOTO }), { expires: 1 });
                     // //console.log('rememberedUser', { USER_ID, NAME,EMAIL,ROLE });
                 }
-                // Navigate to the dashboard using history.push
-                // history.push('/items');
-                window.location.href = "/items";
+                safeNavigate("/items");
             } else {
                 message.error('Invalid username or password');
             }
