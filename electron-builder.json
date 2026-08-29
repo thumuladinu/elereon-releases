@@ -1,0 +1,44 @@
+{
+  "appId": "com.elereon.app",
+  "productName": "Elereon",
+  "copyright": "Copyright © 2026 Elereon",
+  "directories": {
+    "output": "dist",
+    "buildResources": "public"
+  },
+  "files": [
+    "build/**/*",
+    "public/electron.js",
+    "public/preload.js",
+    "public/favicon.png"
+  ],
+  "publish": {
+    "provider": "github",
+    "owner": "thumuladinu",
+    "repo": "elereon-releases"
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/favicon.png"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Elereon",
+    "uninstallDisplayName": "Uninstall Elereon"
+  },
+  "portable": {
+    "artifactName": "Elereon-Portable-${version}.exe"
+  }
+}

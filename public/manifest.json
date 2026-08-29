@@ -1,0 +1,19 @@
+{
+  "short_name": "D&D Engineers",
+  "name": "D&D Engineers",
+  "description": "D&D Engineers Inventory System",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192 512x512 64x64 32x32",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1890ff",
+  "background_color": "#ffffff"
+}

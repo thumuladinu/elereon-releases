@@ -1,0 +1,63 @@
+.manage-project {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.task-sections {
+    margin-top: 20px;
+}
+
+.task-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ant-card {
+    border-radius: 8px;
+}
+
+.ant-card .ant-card-body {
+    padding: 12px;
+}
+
+.ant-card h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.ant-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.ant-card .ant-tag {
+    margin-left: 0px;
+}
+
+.ant-card:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.ant-modal .ant-modal-header {
+    background-color: #f0f2f5;
+}
+
+@media (max-width: 600px) {
+    .ant-card .ant-card-body p {
+        font-size: 14px;
+    }
+
+    .ant-card h4 {
+        font-size: 16px;
+    }
+
+    .task-card .ant-card-body {
+        padding: 20px;
+    }
+}

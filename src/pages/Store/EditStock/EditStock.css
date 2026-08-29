@@ -1,0 +1,8 @@
+.sticky-search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays above other content */
+    background-color: white; /* Prevents content from showing through */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
